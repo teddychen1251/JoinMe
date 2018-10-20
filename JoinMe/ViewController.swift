@@ -10,7 +10,6 @@ import UIKit
 
 class MyCell: UICollectionViewCell {
     @IBOutlet var groupLabel: UILabel!
-    @IBOutlet var groupBtn: UIButton!
 }
 
 class MyGroupsViewController: UIViewController {
@@ -28,12 +27,7 @@ class MyGroupsViewController: UIViewController {
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width)
     }
-    
-    @IBAction func groupBtnPressed(_ sender: Any) {
 
-    }
-    
-    
     /*
      // MARK: - Navigation
      
@@ -63,4 +57,18 @@ extension MyGroupsViewController: UICollectionViewDataSource {
     }
 }
 
+extension MyGroupsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        if indexPath.row == collectionView.numberOfItems(inSection: indexPath.section) - 1 {
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "NewGroup")
+            self.navigationController?.pushViewController(newViewController, animated: false)
+        }
+        else {
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "Group")
+            self.navigationController?.pushViewController(newViewController, animated: false)
+        }
+    }
+
+}
 

@@ -18,11 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="x9R-uK-JuT">
-                                <rect key="frame" x="0.0" y="64" width="414" height="368"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="469"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="Vrl-aw-Yoz"/>
-                                    <constraint firstAttribute="height" constant="368" id="nEJ-rz-Bsa"/>
+                                    <constraint firstAttribute="height" constant="469" id="nEJ-rz-Bsa"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lu3-sa-Ohh">
                                     <size key="itemSize" width="174" height="97"/>
@@ -38,25 +38,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="174" height="97"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXh-Mn-Qnz">
-                                                    <rect key="frame" x="8" y="40" width="117" height="42"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="42" id="7XX-Sr-ujj"/>
-                                                        <constraint firstAttribute="width" constant="117" id="Zbd-Yb-3yQ"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" title="Test Group"/>
-                                                    <connections>
-                                                        <action selector="groupBtnPressed:" destination="Amb-ym-0Wg" eventType="touchUpInside" id="1KK-hM-kzw"/>
-                                                        <segue destination="o1w-NO-YX2" kind="show" id="KUv-iX-5v5"/>
-                                                    </connections>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xou-AG-dbt">
-                                                    <rect key="frame" x="75" y="95" width="42" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="42" id="6Oc-Xl-FJn"/>
-                                                        <constraint firstAttribute="height" constant="21" id="EBL-Hz-5iW"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="66" y="38" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -64,13 +47,10 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="xou-AG-dbt" firstAttribute="leading" secondItem="rOg-78-bER" secondAttribute="leadingMargin" constant="67" id="3wG-Nj-BCD"/>
-                                            <constraint firstItem="XXh-Mn-Qnz" firstAttribute="top" secondItem="rOg-78-bER" secondAttribute="topMargin" constant="12" id="FXp-WF-4Qz"/>
-                                            <constraint firstItem="XXh-Mn-Qnz" firstAttribute="leading" secondItem="rOg-78-bER" secondAttribute="leadingMargin" id="XfK-zR-ftV"/>
-                                            <constraint firstItem="xou-AG-dbt" firstAttribute="top" secondItem="rOg-78-bER" secondAttribute="topMargin" constant="67" id="edl-aR-bmo"/>
+                                            <constraint firstItem="xou-AG-dbt" firstAttribute="centerY" secondItem="rOg-78-bER" secondAttribute="centerY" id="0FZ-3l-Ha7"/>
+                                            <constraint firstItem="xou-AG-dbt" firstAttribute="centerX" secondItem="rOg-78-bER" secondAttribute="centerX" id="0QP-Sg-3VJ"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="groupBtn" destination="XXh-Mn-Qnz" id="OLb-6l-Qtg"/>
                                             <outlet property="groupLabel" destination="xou-AG-dbt" id="YBt-hF-7p5"/>
                                         </connections>
                                     </collectionViewCell>
@@ -97,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="-302.89855072463769" y="-484.23913043478262"/>
         </scene>
-        <!--New Group-->
+        <!--Confirm Join-->
         <scene sceneID="flN-Fb-84h">
             <objects>
-                <viewController id="FDc-J5-jx8" userLabel="New Group" sceneMemberID="viewController">
+                <viewController id="FDc-J5-jx8" userLabel="Confirm Join" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nTf-oy-bSs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,18 +164,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hMf-oc-Mmt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="492.75362318840581" y="-68.478260869565219"/>
+            <point key="canvasLocation" x="464" y="-44"/>
         </scene>
         <!--My Friends-->
         <scene sceneID="f7j-cY-bMG">
             <objects>
-                <viewController id="jXn-p4-Nbc" userLabel="My Friends" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyFriends" id="jXn-p4-Nbc" userLabel="My Friends" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="On4-fL-ROc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search friends..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pd2-kM-HEg">
-                                <rect key="frame" x="35" y="75" width="275" height="30"/>
+                                <rect key="frame" x="35" y="105" width="275" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -228,10 +208,10 @@
             </objects>
             <point key="canvasLocation" x="-1076" y="-484.40779610194909"/>
         </scene>
-        <!--Test Group-->
+        <!--Group-->
         <scene sceneID="RvA-qx-TLC">
             <objects>
-                <viewController title="Test Group" id="o1w-NO-YX2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Group" title="Test Group" id="o1w-NO-YX2" userLabel="Group" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2AZ-6p-kWn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -287,31 +267,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shared groups:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUM-kp-nvd">
-                                <rect key="frame" x="20" y="555" width="158" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrR-PC-D46">
-                                <rect key="frame" x="53" y="654" width="95" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Test Group"/>
-                                <connections>
-                                    <segue destination="o1w-NO-YX2" kind="show" id="3tT-ub-3w2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hjj-Cy-bYL">
-                                <rect key="frame" x="198" y="654" width="111" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Test Group 2"/>
-                                <connections>
-                                    <segue destination="o1w-NO-YX2" kind="show" id="VYu-qQ-5uL"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96821298" green="1" blue="0.27791848689999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="OJH-Nb-Pjw"/>
@@ -324,8 +279,8 @@
         <!--New Group-->
         <scene sceneID="906-Be-X1b">
             <objects>
-                <viewController title="New Group" id="Abe-Pi-3Ik" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="clM-yB-XPR">
+                <viewController storyboardIdentifier="NewGroup" title="New Group" id="Abe-Pi-3Ik" customClass="NewGroup" customModule="JoinMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="NewGroup" id="clM-yB-XPR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -349,6 +304,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Add Friends"/>
                                 <connections>
+                                    <action selector="addFriendsBtnPressed:" destination="Abe-Pi-3Ik" eventType="touchUpInside" id="Woi-sb-nub"/>
                                     <segue destination="jXn-p4-Nbc" kind="show" id="K2n-cv-zz7"/>
                                 </connections>
                             </button>
@@ -358,13 +314,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Add Location"/>
                                 <connections>
+                                    <action selector="addLocationBtnPressed:" destination="Abe-Pi-3Ik" eventType="touchUpInside" id="qgI-In-UiH"/>
                                     <segue destination="dDt-Bu-sb6" kind="show" id="2hG-JD-sjt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LbC-TV-jwV">
+                                <rect key="frame" x="123" y="547" width="169" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="ADD GROUP"/>
+                                <connections>
+                                    <action selector="addGroupBtnPressed:" destination="Abe-Pi-3Ik" eventType="touchUpInside" id="LmI-oR-CAI"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92820034900000004" green="0.60332150340000001" blue="0.33677782960000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="LN7-tj-r3U"/>
                     </view>
+                    <connections>
+                        <outlet property="nameTxtField" destination="ugu-nC-1RL" id="DTk-pu-VNf"/>
+                        <outlet property="purposeTxtField" destination="xKK-Ny-Uom" id="18Y-5a-Dum"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zhv-gh-Lp3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -373,7 +343,7 @@
         <!--Location-->
         <scene sceneID="3js-Yd-fFC">
             <objects>
-                <viewController id="dDt-Bu-sb6" userLabel="Location" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Location" id="dDt-Bu-sb6" userLabel="Location" customClass="LocationViewController" customModule="JoinMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9MR-IC-EZr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -396,8 +366,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2hG-JD-sjt"/>
-        <segue reference="KUv-iX-5v5"/>
+        <segue reference="bcU-wA-xjs"/>
         <segue reference="K2n-cv-zz7"/>
     </inferredMetricsTieBreakers>
 </document>
