@@ -15,6 +15,14 @@ struct SnapUserInfo {
     let url: URL
 }
 
+extension UIViewController {
+    func hideKeyboardOnTap(_ selector: Selector) {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: selector)
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+}
+
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var bitMji: UIImageView!
@@ -74,7 +82,12 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardOnTap(#selector(self.dismissKeyboard))
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+        // do aditional stuff
     }
     
     func setTxtField(s:String) {
@@ -84,6 +97,7 @@ class LoginViewController: UIViewController {
     func setBitmoji(u:URL) {
         bitMji.kf.setImage(with: u)
     }
+    
     
 
     /*
