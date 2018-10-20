@@ -15,6 +15,7 @@
 		77378E00217ADF620074CFA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77378DFE217ADF620074CFA2 /* LaunchScreen.storyboard */; };
 		B17920F1217BA3BC003A6588 /* NewGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17920F0217BA3BC003A6588 /* NewGroup.swift */; };
 		B17920F3217BA9D5003A6588 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17920F2217BA9D5003A6588 /* LocationViewController.swift */; };
+		B17920F5217BAE19003A6588 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17920F4217BAE19003A6588 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		77378E01217ADF620074CFA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B17920F0217BA3BC003A6588 /* NewGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroup.swift; sourceTree = "<group>"; };
 		B17920F2217BA9D5003A6588 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		B17920F4217BAE19003A6588 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				77378DF2217ADF610074CFA2 /* AppDelegate.swift */,
+				B17920F4217BAE19003A6588 /* LoginViewController.swift */,
 				77378DF4217ADF610074CFA2 /* ViewController.swift */,
 				B17920F0217BA3BC003A6588 /* NewGroup.swift */,
 				B17920F2217BA9D5003A6588 /* LocationViewController.swift */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B17920F5217BAE19003A6588 /* LoginViewController.swift in Sources */,
 				B17920F3217BA9D5003A6588 /* LocationViewController.swift in Sources */,
 				B17920F1217BA3BC003A6588 /* NewGroup.swift in Sources */,
 				77378DF5217ADF610074CFA2 /* ViewController.swift in Sources */,

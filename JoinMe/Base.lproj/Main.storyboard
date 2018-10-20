@@ -206,7 +206,33 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z5m-3t-Qnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1076" y="-484.40779610194909"/>
+            <point key="canvasLocation" x="-1196" y="-484"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="j0c-0p-cnE">
+            <objects>
+                <viewController id="CSI-Iy-VKg" customClass="LoginViewController" customModule="JoinMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l2L-Iu-eGm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Log In / Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThI-rw-Ffu">
+                                <rect key="frame" x="146.66666666666666" y="145" width="120.99999999999997" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ThI-rw-Ffu" firstAttribute="centerX" secondItem="l2L-Iu-eGm" secondAttribute="centerX" id="Xfm-pD-mGT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3qK-nh-3ah"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YoT-ZN-cBZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-775.36231884057975" y="204.61956521739131"/>
         </scene>
         <!--Group-->
         <scene sceneID="RvA-qx-TLC">
