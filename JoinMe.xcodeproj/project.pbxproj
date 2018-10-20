@@ -16,6 +16,8 @@
 		B17920F1217BA3BC003A6588 /* NewGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17920F0217BA3BC003A6588 /* NewGroup.swift */; };
 		B17920F3217BA9D5003A6588 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17920F2217BA9D5003A6588 /* LocationViewController.swift */; };
 		B17920F5217BAE19003A6588 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17920F4217BAE19003A6588 /* LoginViewController.swift */; };
+		B17920F7217BB41C003A6588 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17920F6217BB41C003A6588 /* Group.swift */; };
+		B17920F9217BB6C1003A6588 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17920F8217BB6C1003A6588 /* Member.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		B17920F0217BA3BC003A6588 /* NewGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroup.swift; sourceTree = "<group>"; };
 		B17920F2217BA9D5003A6588 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		B17920F4217BAE19003A6588 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B17920F6217BB41C003A6588 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		B17920F8217BB6C1003A6588 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				77378DFE217ADF620074CFA2 /* LaunchScreen.storyboard */,
 				77378E01217ADF620074CFA2 /* Info.plist */,
 				77378DF9217ADF610074CFA2 /* JoinMe.xcdatamodeld */,
+				B17920F6217BB41C003A6588 /* Group.swift */,
+				B17920F8217BB6C1003A6588 /* Member.swift */,
 			);
 			path = JoinMe;
 			sourceTree = "<group>";
@@ -147,12 +153,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B17920F7217BB41C003A6588 /* Group.swift in Sources */,
 				B17920F5217BAE19003A6588 /* LoginViewController.swift in Sources */,
 				B17920F3217BA9D5003A6588 /* LocationViewController.swift in Sources */,
 				B17920F1217BA3BC003A6588 /* NewGroup.swift in Sources */,
 				77378DF5217ADF610074CFA2 /* ViewController.swift in Sources */,
 				77378DF3217ADF610074CFA2 /* AppDelegate.swift in Sources */,
 				77378DFB217ADF610074CFA2 /* JoinMe.xcdatamodeld in Sources */,
+				B17920F9217BB6C1003A6588 /* Member.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
