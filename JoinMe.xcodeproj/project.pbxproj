@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		772F94E8217BCF8500056085 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 772F94E7217BCF8500056085 /* GoogleService-Info.plist */; };
 		77378DF3217ADF610074CFA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77378DF2217ADF610074CFA2 /* AppDelegate.swift */; };
 		77378DF5217ADF610074CFA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77378DF4217ADF610074CFA2 /* ViewController.swift */; };
 		77378DF8217ADF610074CFA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77378DF6217ADF610074CFA2 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		772F94E7217BCF8500056085 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		77378DEF217ADF610074CFA2 /* JoinMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoinMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77378DF2217ADF610074CFA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77378DF4217ADF610074CFA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				77378DF9217ADF610074CFA2 /* JoinMe.xcdatamodeld */,
 				B17920F6217BB41C003A6588 /* Group.swift */,
 				B17920F8217BB6C1003A6588 /* Member.swift */,
+				772F94E7217BCF8500056085 /* GoogleService-Info.plist */,
 			);
 			path = JoinMe;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77378E00217ADF620074CFA2 /* LaunchScreen.storyboard in Resources */,
+				772F94E8217BCF8500056085 /* GoogleService-Info.plist in Resources */,
 				77378DFD217ADF620074CFA2 /* Assets.xcassets in Resources */,
 				77378DF8217ADF610074CFA2 /* Main.storyboard in Resources */,
 			);
