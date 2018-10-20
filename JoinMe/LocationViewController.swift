@@ -8,45 +8,23 @@
 
 import UIKit
 
-import UIKit
-import MapKit
-import CoreLocation
-import GoogleMaps
-import GooglePlaces
+class LocationViewController: UIViewController {
 
-class LocationViewController: UIViewController, CLLocationManagerDelegate {
-    
-    var location: CLLocation?
-    let manager = CLLocationManager()
-    
-    var mapView: GMSMapView!
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        GMSServices.provideAPIKey("AIzaSyBi3kdvjC4VJ1gMejnNwEomde5YOHBPM1A")
-        
-        manager.desiredAccuracy = kCLLocationAccuracyBest
-        manager.requestAlwaysAuthorization()
-        manager.distanceFilter = 20
-        manager.startUpdatingLocation()
-        manager.delegate = self
-        manager.requestWhenInUseAuthorization()
-        
-        let currentLocation:CLLocationCoordinate2D = manager.location!.coordinate
-        
-        let camera = GMSCameraPosition.camera(withLatitude: (currentLocation.latitude), longitude: (currentLocation.longitude), zoom: 15)
-        mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        mapView.isMyLocationEnabled = true
-        view = mapView
-        
-        let marker = GMSMarker(position: currentLocation)
-        marker.title = "Me"
-        marker.map = mapView
-        
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
+    */
+
 }
-
