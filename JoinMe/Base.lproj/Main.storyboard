@@ -12,52 +12,95 @@
         <!--My Groups-->
         <scene sceneID="2kg-J5-qEu">
             <objects>
-                <viewController title="My Groups" id="Amb-ym-0Wg" sceneMemberID="viewController">
+                <viewController title="My Groups" id="Amb-ym-0Wg" customClass="MyGroupsViewController" customModule="JoinMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bBO-ab-bFI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXh-Mn-Qnz">
-                                <rect key="frame" x="61" y="170" width="117" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Test Group"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="x9R-uK-JuT">
+                                <rect key="frame" x="0.0" y="64" width="414" height="368"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="Vrl-aw-Yoz"/>
+                                    <constraint firstAttribute="height" constant="368" id="nEJ-rz-Bsa"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lu3-sa-Ohh">
+                                    <size key="itemSize" width="174" height="97"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MyCell" id="rOg-78-bER" customClass="MyCell" customModule="JoinMe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="174" height="97"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="174" height="97"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXh-Mn-Qnz">
+                                                    <rect key="frame" x="8" y="40" width="117" height="42"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="42" id="7XX-Sr-ujj"/>
+                                                        <constraint firstAttribute="width" constant="117" id="Zbd-Yb-3yQ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <state key="normal" title="Test Group"/>
+                                                    <connections>
+                                                        <action selector="groupBtnPressed:" destination="Amb-ym-0Wg" eventType="touchUpInside" id="1KK-hM-kzw"/>
+                                                        <segue destination="o1w-NO-YX2" kind="show" id="KUv-iX-5v5"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xou-AG-dbt">
+                                                    <rect key="frame" x="75" y="95" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="42" id="6Oc-Xl-FJn"/>
+                                                        <constraint firstAttribute="height" constant="21" id="EBL-Hz-5iW"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="xou-AG-dbt" firstAttribute="leading" secondItem="rOg-78-bER" secondAttribute="leadingMargin" constant="67" id="3wG-Nj-BCD"/>
+                                            <constraint firstItem="XXh-Mn-Qnz" firstAttribute="top" secondItem="rOg-78-bER" secondAttribute="topMargin" constant="12" id="FXp-WF-4Qz"/>
+                                            <constraint firstItem="XXh-Mn-Qnz" firstAttribute="leading" secondItem="rOg-78-bER" secondAttribute="leadingMargin" id="XfK-zR-ftV"/>
+                                            <constraint firstItem="xou-AG-dbt" firstAttribute="top" secondItem="rOg-78-bER" secondAttribute="topMargin" constant="67" id="edl-aR-bmo"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="groupBtn" destination="XXh-Mn-Qnz" id="OLb-6l-Qtg"/>
+                                            <outlet property="groupLabel" destination="xou-AG-dbt" id="YBt-hF-7p5"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
                                 <connections>
-                                    <segue destination="o1w-NO-YX2" kind="show" id="KUv-iX-5v5"/>
+                                    <outlet property="dataSource" destination="Amb-ym-0Wg" id="kJs-Lq-UED"/>
+                                    <outlet property="delegate" destination="Amb-ym-0Wg" id="dib-hx-Pxn"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uR1-zf-jeY">
-                                <rect key="frame" x="211" y="170" width="137" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Test Group 2"/>
-                                <connections>
-                                    <segue destination="o1w-NO-YX2" kind="show" id="H9U-b3-Ta0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AM2-xP-TdM">
-                                <rect key="frame" x="60" y="265" width="118" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="New group"/>
-                                <connections>
-                                    <segue destination="Abe-Pi-3Ik" kind="show" id="8qN-bv-bqZ"/>
-                                </connections>
-                            </button>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="x9R-uK-JuT" firstAttribute="top" secondItem="AzE-bW-aSD" secondAttribute="top" id="DJz-bP-RxT"/>
+                            <constraint firstItem="x9R-uK-JuT" firstAttribute="leading" secondItem="AzE-bW-aSD" secondAttribute="leading" id="yWf-ab-tnO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="AzE-bW-aSD"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Groups" id="wgn-GI-cYU"/>
+                    <connections>
+                        <outlet property="collectionView" destination="x9R-uK-JuT" id="v0d-i9-gFr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mfy-eT-trB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-302" y="-484"/>
+            <point key="canvasLocation" x="-302.89855072463769" y="-484.23913043478262"/>
         </scene>
-        <!--View Controller-->
+        <!--New Group-->
         <scene sceneID="flN-Fb-84h">
             <objects>
-                <viewController id="FDc-J5-jx8" sceneMemberID="viewController">
+                <viewController id="FDc-J5-jx8" userLabel="New Group" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nTf-oy-bSs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -143,10 +186,10 @@
             </objects>
             <point key="canvasLocation" x="492.75362318840581" y="-68.478260869565219"/>
         </scene>
-        <!--View Controller-->
+        <!--My Friends-->
         <scene sceneID="f7j-cY-bMG">
             <objects>
-                <viewController id="jXn-p4-Nbc" sceneMemberID="viewController">
+                <viewController id="jXn-p4-Nbc" userLabel="My Friends" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="On4-fL-ROc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -327,10 +370,10 @@
             </objects>
             <point key="canvasLocation" x="492.75362318840581" y="705.97826086956525"/>
         </scene>
-        <!--View Controller-->
+        <!--Location-->
         <scene sceneID="3js-Yd-fFC">
             <objects>
-                <viewController id="dDt-Bu-sb6" sceneMemberID="viewController">
+                <viewController id="dDt-Bu-sb6" userLabel="Location" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9MR-IC-EZr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -353,8 +396,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bcU-wA-xjs"/>
-        <segue reference="3tT-ub-3w2"/>
+        <segue reference="2hG-JD-sjt"/>
+        <segue reference="KUv-iX-5v5"/>
         <segue reference="K2n-cv-zz7"/>
     </inferredMetricsTieBreakers>
 </document>
