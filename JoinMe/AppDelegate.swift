@@ -8,9 +8,17 @@
 
 import UIKit
 import CoreData
+import SCSDKLoginKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        if SCSDKLoginClient.application(app, open: url, options: options) {
+            return true
+        }
+        return true
+    }
 
     var window: UIWindow?
 
