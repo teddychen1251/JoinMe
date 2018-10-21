@@ -9,6 +9,7 @@
 import UIKit
 import SCSDKLoginKit
 import Kingfisher
+import Firebase
 
 struct SnapUserInfo {
     let displayName: String
@@ -17,6 +18,9 @@ struct SnapUserInfo {
 
 class LoginViewController: UIViewController {
 
+    var db: Firestore!
+    var usersRef: CollectionReference!
+    
     @IBOutlet weak var bitMji: UIImageView!
     @IBOutlet weak var txtField: UITextField!
     
@@ -66,6 +70,16 @@ class LoginViewController: UIViewController {
                         self.setTxtField(s: userInfo.displayName)
                         self.setBitmoji(u: userInfo.url)
                     }
+                    self.usersRef.addDocument(data: [
+                        "username": userInfo.displayName,
+                        "bitmoji_url": userInfo.url
+                    ]) { err in
+                        if let err = err {
+                            print("Error adding document: \(err)")
+                        } else {
+                            print("User document added!")
+                        }
+                    }
                 })
             }
         }
@@ -74,7 +88,11 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        db = Firestore.firestore()
         
+        usersRef = db.collection("users")
     }
     
     func setTxtField(s:String) {
