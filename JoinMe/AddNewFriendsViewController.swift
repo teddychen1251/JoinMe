@@ -8,10 +8,15 @@
 
 import UIKit
 import Contacts
+import Firebase
 
 class AddFriendsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var myTableView: UITableView!
+    
+    var db: Firestore!
+    var usersRef: CollectionReference!
+    
     
     var friends: [Member] = []
     var member = Member(name: "", bitmoji: "")
@@ -20,6 +25,11 @@ class AddFriendsViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         fetchContacts()
         self.hideKeyboardOnTap(#selector(self.dismissKeyboard))
+        
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        db = Firestore.firestore()
+        usersRef = db.collection("users")
     }
     
     @objc func dismissKeyboard() {
@@ -81,8 +91,18 @@ class AddFriendsViewController: UIViewController, UITableViewDelegate, UITableVi
                         formattedNumber = formattedNumber.replacingOccurrences(of: "(", with: "")
                         formattedNumber = formattedNumber.replacingOccurrences(of: ")", with: "")
                         formattedNumber = formattedNumber.replacingOccurrences(of: "-", with: "")
-                        if formattedNumber == "5556106679" {
-                            self.friends.append(Member(name: (contact.givenName + " " + contact.familyName), bitmoji: "bitmoji link"))
+                        
+                        self.usersRef.getDocuments() { (querySnapshot, error) in
+                            if let error = error {
+                                print("Error getting documents: \(error)")
+                            } else {
+                                for document in querySnapshot!.documents {
+                                    if formattedNumber == document.get("number") as? String ?? "" {
+                                        print("Got em")
+                                        self.friends.append(Member(name: (contact.givenName + " " + contact.familyName), bitmoji: "bitmoji link"))
+                                    }
+                                }
+                            }
                         }
                     })
                     
