@@ -8,4 +8,6 @@ target 'JoinMe' do
   # Pods for JoinMe
   pod 'SnapSDK'
   pod 'Kingfisher', '~> 4.0'
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
 end

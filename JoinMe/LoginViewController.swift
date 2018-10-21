@@ -9,6 +9,7 @@
 import UIKit
 import SCSDKLoginKit
 import Kingfisher
+import Firebase
 
 struct SnapUserInfo {
     let displayName: String
@@ -25,6 +26,9 @@ extension UIViewController {
 
 class LoginViewController: UIViewController {
 
+    var db: Firestore!
+    var usersRef: CollectionReference!
+    
     @IBOutlet weak var bitMji: UIImageView!
     @IBOutlet weak var txtField: UITextField!
     
@@ -60,7 +64,7 @@ class LoginViewController: UIViewController {
             
             
     }
-    
+
     @IBAction func snapchatLoginAction(_ sender: Any) {
         SCSDKLoginClient.login(from: self) { success, error in
             if let error = error {
@@ -74,14 +78,48 @@ class LoginViewController: UIViewController {
                         self.setTxtField(s: userInfo.displayName)
                         self.setBitmoji(u: userInfo.url)
                     }
+                    self.usersRef.getDocuments() { (querySnapshot, error) in
+                        if let error = error {
+                            print("Error getting documents: \(error)")
+                        } else {
+                            var unique = true
+                            for document in querySnapshot!.documents {
+                                if (document.get("bitmoji_id") as? String ?? "") == userInfo.url.path {
+                                    unique = false
+                                    break
+                                }
+                            }
+                            if unique {
+                                self.addUserToDatabase(info: userInfo)
+                            }
+                        }
+                    }
                 })
             }
         }
     }
     
+    private func addUserToDatabase(info: SnapUserInfo) { //eventually assign bitmojiIDs as doc ID to easily check if new user is unique
+        self.usersRef.addDocument(data: [
+            "username": info.displayName,
+            "bitmoji_url": info.url.absoluteString, //NSURL not supported
+            "bitmoji_id": info.url.path
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("User document added!")
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        db = Firestore.firestore()
+        
+        usersRef = db.collection("users")
         self.hideKeyboardOnTap(#selector(self.dismissKeyboard))
     }
     
