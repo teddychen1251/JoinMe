@@ -18,6 +18,7 @@
 		B17920F5217BAE19003A6588 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17920F4217BAE19003A6588 /* LoginViewController.swift */; };
 		B17920F7217BB41C003A6588 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17920F6217BB41C003A6588 /* Group.swift */; };
 		B17920F9217BB6C1003A6588 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17920F8217BB6C1003A6588 /* Member.swift */; };
+		B1870C3E217C1F040002A3E5 /* AddNewFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1870C3D217C1F040002A3E5 /* AddNewFriendsViewController.swift */; };
 		D06732DE217BCADA00AD2792 /* SCSDKCreativeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D06732DB217BCADA00AD2792 /* SCSDKCreativeKit.framework */; };
 		D06732DF217BCADA00AD2792 /* SCSDKCreativeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D06732DB217BCADA00AD2792 /* SCSDKCreativeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D06732E0217BCADA00AD2792 /* SCSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D06732DC217BCADA00AD2792 /* SCSDKLoginKit.framework */; };
@@ -60,6 +61,7 @@
 		B17920F4217BAE19003A6588 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B17920F6217BB41C003A6588 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		B17920F8217BB6C1003A6588 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		B1870C3D217C1F040002A3E5 /* AddNewFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFriendsViewController.swift; sourceTree = "<group>"; };
 		D06732DB217BCADA00AD2792 /* SCSDKCreativeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCSDKCreativeKit.framework; path = Pods/SnapSDK/SCSDKCreativeKit.framework; sourceTree = "<group>"; };
 		D06732DC217BCADA00AD2792 /* SCSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCSDKLoginKit.framework; path = Pods/SnapSDK/SCSDKLoginKit.framework; sourceTree = "<group>"; };
 		D06732DD217BCADA00AD2792 /* SCSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCSDKCoreKit.framework; path = Pods/SnapSDK/SCSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				77378DF4217ADF610074CFA2 /* ViewController.swift */,
 				B17920F0217BA3BC003A6588 /* NewGroup.swift */,
 				B17920F2217BA9D5003A6588 /* LocationViewController.swift */,
+				B1870C3D217C1F040002A3E5 /* AddNewFriendsViewController.swift */,
 				77378DF6217ADF610074CFA2 /* Main.storyboard */,
 				77378DFC217ADF620074CFA2 /* Assets.xcassets */,
 				77378DFE217ADF620074CFA2 /* LaunchScreen.storyboard */,
@@ -278,6 +281,7 @@
 				B17920F1217BA3BC003A6588 /* NewGroup.swift in Sources */,
 				77378DF5217ADF610074CFA2 /* ViewController.swift in Sources */,
 				77378DF3217ADF610074CFA2 /* AppDelegate.swift in Sources */,
+				B1870C3E217C1F040002A3E5 /* AddNewFriendsViewController.swift in Sources */,
 				77378DFB217ADF610074CFA2 /* JoinMe.xcdatamodeld in Sources */,
 				B17920F9217BB6C1003A6588 /* Member.swift in Sources */,
 			);

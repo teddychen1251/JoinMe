@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LocationViewController: UITableViewController, UISearchBarDelegate {
+class LocationViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     
     var locations: [String] = []
     var searchBar = UISearchBar()
@@ -19,11 +19,11 @@ class LocationViewController: UITableViewController, UISearchBarDelegate {
         searchBar.delegate = self
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return locations.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
         let location = locations[indexPath.row]
         cell.textLabel?.text = location
@@ -31,14 +31,7 @@ class LocationViewController: UITableViewController, UISearchBarDelegate {
         return cell
     }
     
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        SongDownloader.downloadSongs(searchTerm: searchBar.text!) { (songs)
-//            in
-//            // songs that were passed in - go back to main thread to run this
-//            DispatchQueue.main.async {
-//                self.locations = locations
-//                self.tableView.reloadData()
-//            }
-//        }
-//    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+       
+    }
 }
