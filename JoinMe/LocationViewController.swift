@@ -17,6 +17,12 @@ class LocationViewController: UIViewController, UISearchBarDelegate, UITableView
         super.viewDidLoad()
         searchBar.sizeToFit()
         searchBar.delegate = self
+        self.hideKeyboardOnTap(#selector(self.dismissKeyboard))
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+        // do aditional stuff
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

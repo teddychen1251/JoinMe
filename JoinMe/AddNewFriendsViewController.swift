@@ -19,6 +19,12 @@ class AddFriendsViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchContacts()
+        self.hideKeyboardOnTap(#selector(self.dismissKeyboard))
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+        // do aditional stuff
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

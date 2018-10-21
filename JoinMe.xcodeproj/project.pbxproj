@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		772F94E8217BCF8500056085 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		77378DF3217ADF610074CFA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77378DF2217ADF610074CFA2 /* AppDelegate.swift */; };
 		77378DF5217ADF610074CFA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77378DF4217ADF610074CFA2 /* ViewController.swift */; };
 		77378DF8217ADF610074CFA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77378DF6217ADF610074CFA2 /* Main.storyboard */; };
 		77378DFB217ADF610074CFA2 /* JoinMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 77378DF9217ADF610074CFA2 /* JoinMe.xcdatamodeld */; };
 		77378DFD217ADF620074CFA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77378DFC217ADF620074CFA2 /* Assets.xcassets */; };
 		77378E00217ADF620074CFA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77378DFE217ADF620074CFA2 /* LaunchScreen.storyboard */; };
+		7DEAD6B4217C2F4B00E5C784 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DEAD6B3217C2F4B00E5C784 /* GoogleService-Info.plist */; };
 		B17920F1217BA3BC003A6588 /* NewGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17920F0217BA3BC003A6588 /* NewGroup.swift */; };
 		B17920F3217BA9D5003A6588 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17920F2217BA9D5003A6588 /* LocationViewController.swift */; };
 		B17920F5217BAE19003A6588 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17920F4217BAE19003A6588 /* LoginViewController.swift */; };
@@ -55,6 +57,7 @@
 		77378DFC217ADF620074CFA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77378DFF217ADF620074CFA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77378E01217ADF620074CFA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DEAD6B3217C2F4B00E5C784 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		920B153E286A9FCCDBC0021E /* Pods-JoinMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoinMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-JoinMe/Pods-JoinMe.release.xcconfig"; sourceTree = "<group>"; };
 		B17920F0217BA3BC003A6588 /* NewGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroup.swift; sourceTree = "<group>"; };
 		B17920F2217BA9D5003A6588 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +126,7 @@
 				77378DFC217ADF620074CFA2 /* Assets.xcassets */,
 				77378DFE217ADF620074CFA2 /* LaunchScreen.storyboard */,
 				77378E01217ADF620074CFA2 /* Info.plist */,
+				7DEAD6B3217C2F4B00E5C784 /* GoogleService-Info.plist */,
 				77378DF9217ADF610074CFA2 /* JoinMe.xcdatamodeld */,
 				B17920F6217BB41C003A6588 /* Group.swift */,
 				B17920F8217BB6C1003A6588 /* Member.swift */,
@@ -202,8 +206,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				77378E00217ADF620074CFA2 /* LaunchScreen.storyboard in Resources */,
+				772F94E8217BCF8500056085 /* (null) in Resources */,
 				77378DFD217ADF620074CFA2 /* Assets.xcassets in Resources */,
 				77378DF8217ADF610074CFA2 /* Main.storyboard in Resources */,
+				7DEAD6B4217C2F4B00E5C784 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,27 +225,47 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-JoinMe/Pods-JoinMe-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${PODS_ROOT}/SnapSDK/SCSDKBitmojiKit.framework",
 				"${PODS_ROOT}/SnapSDK/SCSDKCoreKit.framework",
 				"${PODS_ROOT}/SnapSDK/SCSDKCreativeKit.framework",
 				"${PODS_ROOT}/SnapSDK/SCSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKBitmojiKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKCreativeKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

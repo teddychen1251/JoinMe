@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MyCell: UICollectionViewCell {
     @IBOutlet var groupLabel: UILabel!
@@ -14,6 +15,9 @@ class MyCell: UICollectionViewCell {
 
 class MyGroupsViewController: UIViewController {
     
+    var db: Firestore!
+    var user: DocumentReference!
+
     var collectionData: [Group] = [Group(name: "+", members: [], location: "")]
     
     @IBOutlet var collectionView: UICollectionView!

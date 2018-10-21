@@ -9,6 +9,9 @@
 import UIKit
 import SCSDKLoginKit
 import Kingfisher
+import Firebase
+
+
 
 struct SnapUserInfo {
     let displayName: String
@@ -25,8 +28,17 @@ extension UIViewController {
 
 class LoginViewController: UIViewController {
 
+    var db: Firestore!
+    var usersRef: CollectionReference!
+    var user: DocumentReference!
+    
     @IBOutlet weak var bitMji: UIImageView!
     @IBOutlet weak var txtField: UITextField!
+    @IBOutlet weak var enterButton: UIButton!
+    
+    @IBAction func enterButtonTapped(_ sender: Any) {
+        user.setData(["displayName": txtField.text!], mergeFields: ["displayName"])
+    }
     
     private func fetchSnapUserInfo(completionBlock:@escaping (SnapUserInfo)->()){
             
@@ -60,7 +72,7 @@ class LoginViewController: UIViewController {
             
             
     }
-    
+
     @IBAction func snapchatLoginAction(_ sender: Any) {
         SCSDKLoginClient.login(from: self) { success, error in
             if let error = error {
@@ -73,15 +85,52 @@ class LoginViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.setTxtField(s: userInfo.displayName)
                         self.setBitmoji(u: userInfo.url)
+                        self.enterButton.isHidden = false
+                    }
+                    self.usersRef.getDocuments() { (querySnapshot, error) in
+                        if let error = error {
+                            print("Error getting documents: \(error)")
+                        } else {
+                            var unique = true
+                            for document in querySnapshot!.documents {
+                                if (document.get("bitmoji_id") as? String ?? "") == userInfo.url.path {
+                                    unique = false
+                                    self.user = document.reference //self.usersRef.document(document.documentID)
+                                    break
+                                }
+                            }
+                            if unique {
+                                self.user = self.addUserToDatabase(info: userInfo)
+                            }
+                        }
                     }
                 })
             }
         }
     }
     
+    private func addUserToDatabase(info: SnapUserInfo) -> DocumentReference { //eventually assign bitmojiIDs as doc ID to easily check if new user is unique
+        return self.usersRef.addDocument(data: [
+            "username": info.displayName,
+            "displayName": info.displayName,
+            "bitmoji_url": info.url.absoluteString, //NSURL not supported
+            "bitmoji_id": info.url.path
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("User document added!")
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        db = Firestore.firestore()
+        
+        usersRef = db.collection("users")
         self.hideKeyboardOnTap(#selector(self.dismissKeyboard))
     }
     
@@ -109,5 +158,11 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dvc = segue.destination as! MyGroupsViewController
+        dvc.user = user
+        dvc.db = db
+    }
 
 }
