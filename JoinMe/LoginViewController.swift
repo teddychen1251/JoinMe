@@ -99,7 +99,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    private func addUserToDatabase(info: SnapUserInfo) {
+    private func addUserToDatabase(info: SnapUserInfo) { //eventually assign bitmojiIDs as doc ID to easily check if new user is unique
         self.usersRef.addDocument(data: [
             "username": info.displayName,
             "bitmoji_url": info.url.absoluteString, //NSURL not supported
