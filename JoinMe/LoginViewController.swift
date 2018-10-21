@@ -28,9 +28,15 @@ class LoginViewController: UIViewController {
 
     var db: Firestore!
     var usersRef: CollectionReference!
+    var user: DocumentReference!
     
     @IBOutlet weak var bitMji: UIImageView!
     @IBOutlet weak var txtField: UITextField!
+    @IBOutlet weak var enterButton: UIButton!
+    
+    @IBAction func enterButtonTapped(_ sender: Any) {
+        user.setData(["displayName": txtField.text!], mergeFields: ["displayName"])
+    }
     
     private func fetchSnapUserInfo(completionBlock:@escaping (SnapUserInfo)->()){
             
@@ -77,6 +83,7 @@ class LoginViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.setTxtField(s: userInfo.displayName)
                         self.setBitmoji(u: userInfo.url)
+                        self.enterButton.isHidden = false
                     }
                     self.usersRef.getDocuments() { (querySnapshot, error) in
                         if let error = error {
@@ -86,11 +93,12 @@ class LoginViewController: UIViewController {
                             for document in querySnapshot!.documents {
                                 if (document.get("bitmoji_id") as? String ?? "") == userInfo.url.path {
                                     unique = false
+                                    self.user = self.usersRef.document(document.documentID)
                                     break
                                 }
                             }
                             if unique {
-                                self.addUserToDatabase(info: userInfo)
+                                self.user = self.addUserToDatabase(info: userInfo)
                             }
                         }
                     }
@@ -99,9 +107,10 @@ class LoginViewController: UIViewController {
         }
     }
     
-    private func addUserToDatabase(info: SnapUserInfo) { //eventually assign bitmojiIDs as doc ID to easily check if new user is unique
-        self.usersRef.addDocument(data: [
+    private func addUserToDatabase(info: SnapUserInfo) -> DocumentReference { //eventually assign bitmojiIDs as doc ID to easily check if new user is unique
+        return self.usersRef.addDocument(data: [
             "username": info.displayName,
+            "displayName": info.displayName,
             "bitmoji_url": info.url.absoluteString, //NSURL not supported
             "bitmoji_id": info.url.path
         ]) { err in
