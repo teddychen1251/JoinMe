@@ -93,7 +93,7 @@ class LoginViewController: UIViewController {
                             for document in querySnapshot!.documents {
                                 if (document.get("bitmoji_id") as? String ?? "") == userInfo.url.path {
                                     unique = false
-                                    self.user = self.usersRef.document(document.documentID)
+                                    self.user = document.reference //self.usersRef.document(document.documentID)
                                     break
                                 }
                             }
