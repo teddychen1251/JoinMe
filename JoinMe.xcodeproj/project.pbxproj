@@ -15,6 +15,7 @@
 		77378DFD217ADF620074CFA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77378DFC217ADF620074CFA2 /* Assets.xcassets */; };
 		77378E00217ADF620074CFA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77378DFE217ADF620074CFA2 /* LaunchScreen.storyboard */; };
 		7DEAD6B4217C2F4B00E5C784 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DEAD6B3217C2F4B00E5C784 /* GoogleService-Info.plist */; };
+		B1434DBD217C968D00468BD0 /* GroupAndProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1434DBC217C968D00468BD0 /* GroupAndProfileViewController.swift */; };
 		B17920F1217BA3BC003A6588 /* NewGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17920F0217BA3BC003A6588 /* NewGroup.swift */; };
 		B17920F3217BA9D5003A6588 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17920F2217BA9D5003A6588 /* LocationViewController.swift */; };
 		B17920F5217BAE19003A6588 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17920F4217BAE19003A6588 /* LoginViewController.swift */; };
@@ -59,6 +60,7 @@
 		77378E01217ADF620074CFA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DEAD6B3217C2F4B00E5C784 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		920B153E286A9FCCDBC0021E /* Pods-JoinMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoinMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-JoinMe/Pods-JoinMe.release.xcconfig"; sourceTree = "<group>"; };
+		B1434DBC217C968D00468BD0 /* GroupAndProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAndProfileViewController.swift; sourceTree = "<group>"; };
 		B17920F0217BA3BC003A6588 /* NewGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroup.swift; sourceTree = "<group>"; };
 		B17920F2217BA9D5003A6588 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		B17920F4217BAE19003A6588 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				77378DF4217ADF610074CFA2 /* ViewController.swift */,
 				B17920F0217BA3BC003A6588 /* NewGroup.swift */,
 				B1870C3D217C1F040002A3E5 /* AddNewFriendsViewController.swift */,
+				B1434DBC217C968D00468BD0 /* GroupAndProfileViewController.swift */,
 				77378DF6217ADF610074CFA2 /* Main.storyboard */,
 				77378DFC217ADF620074CFA2 /* Assets.xcassets */,
 				77378DFE217ADF620074CFA2 /* LaunchScreen.storyboard */,
@@ -305,6 +308,7 @@
 				B17920F5217BAE19003A6588 /* LoginViewController.swift in Sources */,
 				B17920F3217BA9D5003A6588 /* LocationViewController.swift in Sources */,
 				B17920F1217BA3BC003A6588 /* NewGroup.swift in Sources */,
+				B1434DBD217C968D00468BD0 /* GroupAndProfileViewController.swift in Sources */,
 				77378DF5217ADF610074CFA2 /* ViewController.swift in Sources */,
 				77378DF3217ADF610074CFA2 /* AppDelegate.swift in Sources */,
 				B1870C3E217C1F040002A3E5 /* AddNewFriendsViewController.swift in Sources */,

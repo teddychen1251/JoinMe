@@ -34,9 +34,9 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var bitMji: UIImageView!
     @IBOutlet weak var txtField: UITextField!
-    @IBOutlet weak var enterButton: UIButton!
+    @IBOutlet var enterButton: UIButton!
     
-    @IBAction func enterButtonTapped(_ sender: Any) {
+    @IBAction func enterBtnPressed(_ sender: Any) {
         user.setData(["displayName": txtField.text!], mergeFields: ["displayName"])
     }
     

@@ -20,9 +20,8 @@ class NewGroup: UIViewController {
     @IBOutlet var locationTxtField: UITextField!
     @IBOutlet var collectionView: UICollectionView!
     
+    
     var collectionData: [UIImage] = []
-    var member: Member = Member(name: "", bitmoji: "")
-    var addedFriendsList: [Member] = [Member(name: "Tim", bitmoji: "yes")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,36 +41,23 @@ class NewGroup: UIViewController {
 //    }
     
     override func viewDidAppear(_ animated: Bool) {
-        print(addedFriendsList.count)
-        if member.name != "" {
-            addedFriendsList.append(member)
-//            let bitmojiImage = UIImageView()
-//            bitmojiImage.kf.setImage(with: URL(string: member.name))
-//            collectionData.append(bitmojiImage.image!)
-            collectionData.insert(UIImage(named: "testBitmoji")!, at: 0)
-            for friend in addedFriendsList {
-                print(friend.name)
-            }
-            for it in collectionData {
-                print(it.accessibilityIdentifier!)
-            }
-            collectionView.reloadData()
+        collectionView.reloadData()
+        for person in friends {
+            let bitmojiImage = UIImageView()
+            bitmojiImage.kf.setImage(with: URL(string: person.bitmoji))
+            let userPic: UIImage = bitmojiImage.image ?? UIImage(named: "testBitmoji")!
+            collectionData.insert(userPic, at: 0)
         }
+    
+        collectionView.reloadData()
     }
     
     @IBAction func addGroupBtnPressed(_ sender: Any) {
         let name = nameTxtField.text
         let location = locationTxtField.text
-        if name != nil && location != nil {
-//            let vc = MyGroupsViewController(nibName: "MyGroups", bundle: nil)
-//            vc.group = Group(name: name!, members: addedFriendsList, location: location!)
-//            self.navigationController?.popViewController(animated: false)
-            
-            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            if let homeViewController = mainStoryboard.instantiateViewController(withIdentifier: "MyGroups") as? MyGroupsViewController {
-                homeViewController.group = Group(name: name!, members: addedFriendsList, location: location!)
-                self.present(homeViewController, animated: false)
-            }
+        if name != "" && location != "" && friends.count > 0 {
+            myGroups.insert(Group(name: name!, members: friends, location: location!), at: 0)
+            self.navigationController?.popViewController(animated: false)
         }
     }
 }
