@@ -25,6 +25,11 @@ class NewGroup: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionData.append(UIImage(named: "addBtn")!)
+        self.hideKeyboardOnTap(#selector(self.dismissKeyboard))
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     override func viewDidLayoutSubviews() {
