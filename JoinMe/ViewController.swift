@@ -14,30 +14,19 @@ class MyCell: UICollectionViewCell {
 
 class MyGroupsViewController: UIViewController {
     
-    var collectionData = ["1", "2", "3"]
-    
+    var collectionData: [Group] = [Group(name: "+", members: [], location: "")]
     
     @IBOutlet var collectionView: UICollectionView!
+    
+    var group: Group = Group(name: "", members: [], location: "")
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
-        collectionData.append("+")
         
         let width = (view.frame.size.width - 20) / 2
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width)
     }
-
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 
 extension MyGroupsViewController: UICollectionViewDataSource {
@@ -52,7 +41,7 @@ extension MyGroupsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! MyCell
-        cell.groupLabel.text = collectionData[indexPath.row]
+        cell.groupLabel.text = collectionData[indexPath.row].name
         return cell
     }
 }
@@ -63,12 +52,12 @@ extension MyGroupsViewController: UICollectionViewDelegate {
         if indexPath.row == collectionView.numberOfItems(inSection: indexPath.section) - 1 {
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "NewGroup")
             self.navigationController?.pushViewController(newViewController, animated: false)
+            collectionView.reloadData()
         }
         else {
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "Group")
             self.navigationController?.pushViewController(newViewController, animated: false)
         }
     }
-
 }
 
