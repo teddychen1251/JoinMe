@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MyFriendCell: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
@@ -14,6 +15,9 @@ class MyFriendCell: UICollectionViewCell {
 
 class NewGroup: UIViewController {
 
+    var db: Firestore!
+    var user: DocumentReference!
+    
     @IBOutlet var nameTxtField: UITextField!
     @IBOutlet var locationTxtField: UITextField!
     @IBOutlet var collectionView: UICollectionView!
@@ -26,6 +30,14 @@ class NewGroup: UIViewController {
         super.viewDidLoad()
         collectionData.append(UIImage(named: "addBtn")!)
         self.hideKeyboardOnTap(#selector(self.dismissKeyboard))
+        
+        user.getDocument { (document, error) in
+            if let error = error {
+                print("Error getting document: \(error)")
+            } else {
+                print(document!.get("bitmoji_url") as? String ?? "")
+            }
+        }
     }
     
     @objc func dismissKeyboard() {

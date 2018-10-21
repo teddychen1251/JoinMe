@@ -11,6 +11,8 @@ import SCSDKLoginKit
 import Kingfisher
 import Firebase
 
+
+
 struct SnapUserInfo {
     let displayName: String
     let url: URL
@@ -156,5 +158,11 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dvc = segue.destination as! NewGroup
+        dvc.user = user
+        dvc.db = db
+    }
 
 }
