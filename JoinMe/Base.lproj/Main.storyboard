@@ -130,7 +130,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Amb-ym-0Wg" kind="relationship" relationship="rootViewController" id="cUu-vx-e7X"/>
+                        <segue destination="CSI-Iy-VKg" kind="relationship" relationship="rootViewController" id="Vt3-xN-j13"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z5m-3t-Qnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -174,11 +174,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JoinMe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTV-L9-Ldg">
-                                <rect key="frame" x="148.66666666666666" y="51" width="116.99999999999997" height="43"/>
+                                <rect key="frame" x="148.66666666666666" y="95" width="116.99999999999997" height="43"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="39"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tf-1J-0iR">
+                                <rect key="frame" x="184" y="627" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="Amb-ym-0Wg" kind="show" id="zgO-7v-WgR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.66945055239661411" green="0.92032207666162769" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -200,6 +208,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3qK-nh-3ah"/>
                     </view>
+                    <navigationItem key="navigationItem" id="NeJ-zH-37Q"/>
                     <connections>
                         <outlet property="bitMji" destination="m6A-6f-SLQ" id="R26-a0-xjF"/>
                         <outlet property="txtField" destination="LL7-RX-9GU" id="6Lu-Ly-h9c"/>
