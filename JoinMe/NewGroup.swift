@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MyFriendCell: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
@@ -27,26 +28,44 @@ class NewGroup: UIViewController {
         collectionData.append(UIImage(named: "addBtn")!)
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        let width = (view.frame.size.width - 20) / 2
-        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.itemSize = CGSize(width: width, height: width)
-    }
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        let width = (view.frame.size.width - 20) / 2
+//        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+//        layout.itemSize = CGSize(width: width, height: width)
+//    }
     
     override func viewDidAppear(_ animated: Bool) {
-        addedFriendsList.append(member)
-        print(addedFriendsList[0].name, addedFriendsList[1].name)
-        collectionView.reloadData()
+        print(addedFriendsList.count)
+        if member.name != "" {
+            addedFriendsList.append(member)
+//            let bitmojiImage = UIImageView()
+//            bitmojiImage.kf.setImage(with: URL(string: member.name))
+//            collectionData.append(bitmojiImage.image!)
+            collectionData.insert(UIImage(named: "testBitmoji")!, at: 0)
+            for friend in addedFriendsList {
+                print(friend.name)
+            }
+            for it in collectionData {
+                print(it.accessibilityIdentifier!)
+            }
+            collectionView.reloadData()
+        }
     }
     
     @IBAction func addGroupBtnPressed(_ sender: Any) {
         let name = nameTxtField.text
         let location = locationTxtField.text
         if name != nil && location != nil {
-            let vc = MyGroupsViewController(nibName: "MyGroups", bundle: nil)
-            vc.group = Group(name: name!, members: addedFriendsList, location: location!)
-            self.navigationController?.popViewController(animated: false)
+//            let vc = MyGroupsViewController(nibName: "MyGroups", bundle: nil)
+//            vc.group = Group(name: name!, members: addedFriendsList, location: location!)
+//            self.navigationController?.popViewController(animated: false)
+            
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            if let homeViewController = mainStoryboard.instantiateViewController(withIdentifier: "MyGroups") as? MyGroupsViewController {
+                homeViewController.group = Group(name: name!, members: addedFriendsList, location: location!)
+                self.present(homeViewController, animated: false)
+            }
         }
     }
 }
@@ -70,15 +89,15 @@ extension NewGroup: UICollectionViewDataSource {
     
 extension NewGroup: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         if indexPath.row == collectionView.numberOfItems(inSection: indexPath.section) - 1 {
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyFriends")
             self.navigationController?.pushViewController(newViewController, animated: false)
         }
-//        else {
-//            let newViewController = storyBoard.instantiateViewController(withIdentifier: "Group")
-//            self.navigationController?.pushViewController(newViewController, animated: false)
-//        }
+        else {
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "Profile")
+            self.navigationController?.pushViewController(newViewController, animated: false)
+        }
     }
 }
 

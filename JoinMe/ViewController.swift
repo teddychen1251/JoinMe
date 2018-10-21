@@ -27,6 +27,16 @@ class MyGroupsViewController: UIViewController {
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if group.name != "" {
+            collectionData.insert(group, at: 0)
+            for it in collectionData {
+                print(it.name)
+            }
+            collectionView.reloadData()
+        }
+    }
 }
 
 extension MyGroupsViewController: UICollectionViewDataSource {
@@ -52,7 +62,6 @@ extension MyGroupsViewController: UICollectionViewDelegate {
         if indexPath.row == collectionView.numberOfItems(inSection: indexPath.section) - 1 {
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "NewGroup")
             self.navigationController?.pushViewController(newViewController, animated: false)
-            collectionView.reloadData()
         }
         else {
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "Group")

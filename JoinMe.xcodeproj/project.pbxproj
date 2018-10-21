@@ -118,7 +118,6 @@
 				B17920F4217BAE19003A6588 /* LoginViewController.swift */,
 				77378DF4217ADF610074CFA2 /* ViewController.swift */,
 				B17920F0217BA3BC003A6588 /* NewGroup.swift */,
-				B17920F2217BA9D5003A6588 /* LocationViewController.swift */,
 				B1870C3D217C1F040002A3E5 /* AddNewFriendsViewController.swift */,
 				77378DF6217ADF610074CFA2 /* Main.storyboard */,
 				77378DFC217ADF620074CFA2 /* Assets.xcassets */,
@@ -127,6 +126,7 @@
 				77378DF9217ADF610074CFA2 /* JoinMe.xcdatamodeld */,
 				B17920F6217BB41C003A6588 /* Group.swift */,
 				B17920F8217BB6C1003A6588 /* Member.swift */,
+				B17920F2217BA9D5003A6588 /* LocationViewController.swift */,
 			);
 			path = JoinMe;
 			sourceTree = "<group>";

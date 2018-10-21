@@ -14,6 +14,7 @@ class AddFriendsViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet var myTableView: UITableView!
     
     var friends: [Member] = []
+    var member = Member(name: "", bitmoji: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +37,20 @@ class AddFriendsViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = myTableView.cellForRow(at: indexPath)
         let bitmoji = cell?.textLabel?.text
         let name = cell?.detailTextLabel?.text
+
+        member = Member(name: name!, bitmoji: bitmoji!)
+    //self.navigationController?.popViewController(animated: false)
         
-        let vc = NewGroup(nibName: "NewGroup", bundle: nil)
-        vc.member = Member(name: name!, bitmoji: bitmoji!)
-        
-        self.navigationController?.popViewController(animated: false)
+//        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        if let homeViewController = mainStoryboard.instantiateViewController(withIdentifier: "NewGroup") as? NewGroup {
+//            homeViewController.member = Member(name: name!, bitmoji: bitmoji!)
+//            self.present(homeViewController, animated: false)
+//        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dvc = segue.destination as! NewGroup
+        dvc.member = member
     }
     
     func fetchContacts() {
@@ -61,11 +71,10 @@ class AddFriendsViewController: UIViewController, UITableViewDelegate, UITableVi
                     try store.enumerateContacts(with: request, usingBlock: { (contact, stopPointerIfYouWantToStopEnumerating) in
                         
                         let number = contact.phoneNumbers.first?.value.stringValue ?? ""
-                        var formattedNumber = number.replacingOccurrences(of: "(", with: "")
-                        formattedNumber = number.replacingOccurrences(of: ")", with: "")
-                        formattedNumber = number.replacingOccurrences(of: " ", with: "")
-                        formattedNumber = number.replacingOccurrences(of: "-", with: "")
-                        print(formattedNumber)
+                        var formattedNumber = number.replacingOccurrences(of: " ", with: "")
+                        formattedNumber = formattedNumber.replacingOccurrences(of: "(", with: "")
+                        formattedNumber = formattedNumber.replacingOccurrences(of: ")", with: "")
+                        formattedNumber = formattedNumber.replacingOccurrences(of: "-", with: "")
                         if formattedNumber == "5556106679" {
                             self.friends.append(Member(name: (contact.givenName + " " + contact.familyName), bitmoji: "bitmoji link"))
                         }

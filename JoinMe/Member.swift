@@ -9,8 +9,8 @@
 import UIKit
 
 class Member: NSObject {
-    let name: String
-    let bitmoji: String
+    var name: String
+    var bitmoji: String
     
     init(name: String, bitmoji: String) {
         self.name = name
