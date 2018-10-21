@@ -16,6 +16,14 @@ struct SnapUserInfo {
     let url: URL
 }
 
+extension UIViewController {
+    func hideKeyboardOnTap(_ selector: Selector) {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: selector)
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+}
+
 class LoginViewController: UIViewController {
 
     var db: Firestore!
@@ -93,6 +101,12 @@ class LoginViewController: UIViewController {
         db = Firestore.firestore()
         
         usersRef = db.collection("users")
+        self.hideKeyboardOnTap(#selector(self.dismissKeyboard))
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+        // do aditional stuff
     }
     
     func setTxtField(s:String) {
@@ -102,6 +116,7 @@ class LoginViewController: UIViewController {
     func setBitmoji(u:URL) {
         bitMji.kf.setImage(with: u)
     }
+    
     
 
     /*

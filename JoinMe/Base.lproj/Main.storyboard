@@ -216,35 +216,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Log In / Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThI-rw-Ffu">
-                                <rect key="frame" x="146.66666666666666" y="145" width="120.99999999999997" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Snapchat Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThI-rw-Ffu">
+                                <rect key="frame" x="147.66666666666666" y="308" width="118.99999999999997" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LL7-RX-9GU">
-                                <rect key="frame" x="159" y="353" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LL7-RX-9GU">
+                                <rect key="frame" x="103.66666666666669" y="353" width="207" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m6A-6f-SLQ">
-                                <rect key="frame" x="87" y="205" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m6A-6f-SLQ">
+                                <rect key="frame" x="138" y="162" width="138" height="138"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="m6A-6f-SLQ" secondAttribute="height" multiplier="1:1" id="3tr-I6-LxM"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7se-86-naV">
-                                <rect key="frame" x="184" y="405" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7se-86-naV">
+                                <rect key="frame" x="138" y="423" width="138" height="138"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7se-86-naV" secondAttribute="height" multiplier="1:1" id="QMD-Ri-DL5"/>
+                                </constraints>
+                                <state key="normal" image="snapchatlogo"/>
                                 <connections>
                                     <action selector="snapchatLoginAction:" destination="CSI-Iy-VKg" eventType="touchUpInside" id="09Y-Sm-APT"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JoinMe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTV-L9-Ldg">
+                                <rect key="frame" x="148.66666666666666" y="51" width="116.99999999999997" height="43"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="39"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.66945055239661411" green="0.92032207666162769" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="ThI-rw-Ffu" firstAttribute="centerX" secondItem="l2L-Iu-eGm" secondAttribute="centerX" id="Xfm-pD-mGT"/>
+                            <constraint firstItem="7se-86-naV" firstAttribute="centerX" secondItem="l2L-Iu-eGm" secondAttribute="centerX" id="35Z-8W-Gc1"/>
+                            <constraint firstItem="LL7-RX-9GU" firstAttribute="centerX" secondItem="l2L-Iu-eGm" secondAttribute="centerX" id="3Q6-4I-JfA"/>
+                            <constraint firstItem="m6A-6f-SLQ" firstAttribute="width" secondItem="l2L-Iu-eGm" secondAttribute="width" multiplier="1/3" id="4kv-fZ-Cay"/>
+                            <constraint firstItem="ThI-rw-Ffu" firstAttribute="centerX" secondItem="l2L-Iu-eGm" secondAttribute="centerX" id="5sH-Ch-kvm"/>
+                            <constraint firstItem="ThI-rw-Ffu" firstAttribute="centerX" secondItem="l2L-Iu-eGm" secondAttribute="centerX" id="9bk-xs-dxq"/>
+                            <constraint firstItem="7se-86-naV" firstAttribute="width" secondItem="l2L-Iu-eGm" secondAttribute="width" multiplier="1/3" id="G4b-sN-h8m"/>
+                            <constraint firstItem="LL7-RX-9GU" firstAttribute="width" secondItem="l2L-Iu-eGm" secondAttribute="width" multiplier="0.5" id="JB4-Kd-Bq0"/>
+                            <constraint firstItem="ThI-rw-Ffu" firstAttribute="firstBaseline" secondItem="m6A-6f-SLQ" secondAttribute="baseline" constant="24.333333333333332" symbolType="layoutAnchor" id="Kq9-vi-Kto"/>
+                            <constraint firstItem="7se-86-naV" firstAttribute="top" secondItem="LL7-RX-9GU" secondAttribute="bottom" constant="40" id="Lr0-bn-KjF"/>
+                            <constraint firstItem="jTV-L9-Ldg" firstAttribute="centerX" secondItem="l2L-Iu-eGm" secondAttribute="centerX" id="QOw-sj-Ifl"/>
+                            <constraint firstItem="jTV-L9-Ldg" firstAttribute="top" secondItem="3qK-nh-3ah" secondAttribute="top" constant="31" id="cgA-Cr-5GH"/>
+                            <constraint firstItem="LL7-RX-9GU" firstAttribute="centerY" secondItem="l2L-Iu-eGm" secondAttribute="centerY" id="dB1-C2-BXW"/>
+                            <constraint firstItem="m6A-6f-SLQ" firstAttribute="centerX" secondItem="l2L-Iu-eGm" secondAttribute="centerX" id="h8d-vN-ykn"/>
+                            <constraint firstItem="LL7-RX-9GU" firstAttribute="top" secondItem="ThI-rw-Ffu" secondAttribute="bottom" constant="24" id="lag-nr-aFi"/>
+                            <constraint firstItem="ThI-rw-Ffu" firstAttribute="centerX" secondItem="l2L-Iu-eGm" secondAttribute="centerX" id="mtQ-aF-YfG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3qK-nh-3ah"/>
                     </view>
@@ -255,7 +278,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YoT-ZN-cBZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-303" y="271"/>
+            <point key="canvasLocation" x="-304.34782608695656" y="270.6521739130435"/>
         </scene>
         <!--Group-->
         <scene sceneID="RvA-qx-TLC">
@@ -430,6 +453,9 @@
             <point key="canvasLocation" x="1992.753623188406" y="564.94565217391312"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="snapchatlogo" width="1800" height="1592"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="K2n-cv-zz7"/>
     </inferredMetricsTieBreakers>
