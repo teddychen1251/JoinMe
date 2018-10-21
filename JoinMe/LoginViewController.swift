@@ -160,7 +160,7 @@ class LoginViewController: UIViewController {
     */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dvc = segue.destination as! NewGroup
+        let dvc = segue.destination as! MyGroupsViewController
         dvc.user = user
         dvc.db = db
     }
