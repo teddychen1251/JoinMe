@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 
+var myGroups: [Group] = []
+
 class MyCell: UICollectionViewCell {
     @IBOutlet var groupLabel: UILabel!
 }
@@ -22,14 +24,21 @@ class MyGroupsViewController: UIViewController {
     
     @IBOutlet var collectionView: UICollectionView!
     
-    var group: Group = Group(name: "", members: [], location: "")
-    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         let width = (view.frame.size.width - 20) / 2
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        collectionView.reloadData()
+        for group in myGroups {
+            collectionData.insert(group, at: 0)
+        }
+        
+        collectionView.reloadData()
     }
 }
 
@@ -56,7 +65,6 @@ extension MyGroupsViewController: UICollectionViewDelegate {
         if indexPath.row == collectionView.numberOfItems(inSection: indexPath.section) - 1 {
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "NewGroup")
             self.navigationController?.pushViewController(newViewController, animated: false)
-            collectionView.reloadData()
         }
         else {
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "Group")

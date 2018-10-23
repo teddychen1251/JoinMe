@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 import Firebase
 
 class MyFriendCell: UICollectionViewCell {
@@ -19,9 +20,8 @@ class NewGroup: UIViewController {
     @IBOutlet var locationTxtField: UITextField!
     @IBOutlet var collectionView: UICollectionView!
     
+    
     var collectionData: [UIImage] = []
-    var member: Member = Member(name: "", bitmoji: "")
-    var addedFriendsList: [Member] = [Member(name: "Tim", bitmoji: "yes")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,25 +33,30 @@ class NewGroup: UIViewController {
         view.endEditing(true)
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        let width = (view.frame.size.width - 20) / 2
-        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.itemSize = CGSize(width: width, height: width)
-    }
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        let width = (view.frame.size.width - 20) / 2
+//        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+//        layout.itemSize = CGSize(width: width, height: width)
+//    }
     
     override func viewDidAppear(_ animated: Bool) {
-        addedFriendsList.append(member)
-        print(addedFriendsList[0].name, addedFriendsList[1].name)
+        collectionView.reloadData()
+        for person in friends {
+            let bitmojiImage = UIImageView()
+            bitmojiImage.kf.setImage(with: URL(string: person.bitmoji))
+            let userPic: UIImage = bitmojiImage.image ?? UIImage(named: "testBitmoji")!
+            collectionData.insert(userPic, at: 0)
+        }
+    
         collectionView.reloadData()
     }
     
     @IBAction func addGroupBtnPressed(_ sender: Any) {
         let name = nameTxtField.text
         let location = locationTxtField.text
-        if name != nil && location != nil {
-            let vc = MyGroupsViewController(nibName: "MyGroups", bundle: nil)
-            vc.group = Group(name: name!, members: addedFriendsList, location: location!)
+        if name != "" && location != "" && friends.count > 0 {
+            myGroups.insert(Group(name: name!, members: friends, location: location!), at: 0)
             self.navigationController?.popViewController(animated: false)
         }
     }
@@ -76,15 +81,15 @@ extension NewGroup: UICollectionViewDataSource {
     
 extension NewGroup: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         if indexPath.row == collectionView.numberOfItems(inSection: indexPath.section) - 1 {
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let newViewController = storyBoard.instantiateViewController(withIdentifier: "MyFriends")
             self.navigationController?.pushViewController(newViewController, animated: false)
         }
-//        else {
-//            let newViewController = storyBoard.instantiateViewController(withIdentifier: "Group")
-//            self.navigationController?.pushViewController(newViewController, animated: false)
-//        }
+        else {
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "Profile")
+            self.navigationController?.pushViewController(newViewController, animated: false)
+        }
     }
 }
 

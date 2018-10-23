@@ -8,17 +8,30 @@
 
 import UIKit
 import Contacts
+import Firebase
+
+var friends: [Member] = []
 
 class AddFriendsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var myTableView: UITableView!
     
-    var friends: [Member] = []
+    var userContacts: [String] = []
+    
+    var db: Firestore!
+    var usersRef: CollectionReference!
+    
+    var member = Member(name: "", bitmoji: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchContacts()
         self.hideKeyboardOnTap(#selector(self.dismissKeyboard))
+        
+        let settings = FirestoreSettings()
+        Firestore.firestore().settings = settings
+        db = Firestore.firestore()
+        usersRef = db.collection("users")
     }
     
     @objc func dismissKeyboard() {
@@ -39,14 +52,13 @@ class AddFriendsViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = myTableView.cellForRow(at: indexPath)
-        let bitmoji = cell?.textLabel?.text
-        let name = cell?.detailTextLabel?.text
-        
-        let vc = NewGroup(nibName: "NewGroup", bundle: nil)
-        vc.member = Member(name: name!, bitmoji: bitmoji!)
-        
         self.navigationController?.popViewController(animated: false)
+        
+        //        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        //        if let homeViewController = mainStoryboard.instantiateViewController(withIdentifier: "NewGroup") as? NewGroup {
+        //            homeViewController.member = Member(name: name!, bitmoji: bitmoji!)
+        //            self.present(homeViewController, animated: false)
+        //        }
     }
     
     func fetchContacts() {
@@ -67,14 +79,11 @@ class AddFriendsViewController: UIViewController, UITableViewDelegate, UITableVi
                     try store.enumerateContacts(with: request, usingBlock: { (contact, stopPointerIfYouWantToStopEnumerating) in
                         
                         let number = contact.phoneNumbers.first?.value.stringValue ?? ""
-                        var formattedNumber = number.replacingOccurrences(of: "(", with: "")
-                        formattedNumber = number.replacingOccurrences(of: ")", with: "")
-                        formattedNumber = number.replacingOccurrences(of: " ", with: "")
-                        formattedNumber = number.replacingOccurrences(of: "-", with: "")
-                        print(formattedNumber)
-                        if formattedNumber == "5556106679" {
-                            self.friends.append(Member(name: (contact.givenName + " " + contact.familyName), bitmoji: "bitmoji link"))
-                        }
+                        var formattedNumber = number.replacingOccurrences(of: " ", with: "")
+                        formattedNumber = formattedNumber.replacingOccurrences(of: "(", with: "")
+                        formattedNumber = formattedNumber.replacingOccurrences(of: ")", with: "")
+                        formattedNumber = formattedNumber.replacingOccurrences(of: "-", with: "")
+                        self.userContacts.append(formattedNumber)
                     })
                     
                 }   catch let err {
@@ -85,6 +94,36 @@ class AddFriendsViewController: UIViewController, UITableViewDelegate, UITableVi
                 print("Access denied...")
             }
         }
-        myTableView.reloadData()
+        DispatchQueue.main.async {
+            self.usersRef.getDocuments() { (querySnapshot, error) in
+                if let error = error {
+                    print("Error getting documents: \(error)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        let num = document.get("phone_num") as? String ?? ""
+                        for userNum in self.userContacts {
+                            if userNum == num {
+                                print("Got em")
+                                let displayName = document.get("displayName") as? String ?? ""
+                                let bitmojiUrl = document.get("bitmoji_url") as? String ?? ""
+                                //document.reference.setData(["friends": "placehold"], merge: true)
+                                
+                                if friends.count == 0 {
+                                    friends.append(Member(name: displayName, bitmoji: bitmojiUrl))
+                                }
+                                
+                                for friend in friends {
+                                    print(friend.bitmoji, bitmojiUrl)
+                                    if friend.bitmoji != bitmojiUrl {
+                                        friends.append(Member(name: displayName, bitmoji: bitmojiUrl))
+                                    }
+                                }
+                            }
+                        }
+                        self.myTableView.reloadData()
+                    }
+                }
+            }
+        }
     }
 }
