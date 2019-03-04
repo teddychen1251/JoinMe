@@ -7,15 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		772F94E8217BCF8500056085 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		77378DF3217ADF610074CFA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77378DF2217ADF610074CFA2 /* AppDelegate.swift */; };
 		77378DF5217ADF610074CFA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77378DF4217ADF610074CFA2 /* ViewController.swift */; };
 		77378DF8217ADF610074CFA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77378DF6217ADF610074CFA2 /* Main.storyboard */; };
 		77378DFB217ADF610074CFA2 /* JoinMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 77378DF9217ADF610074CFA2 /* JoinMe.xcdatamodeld */; };
 		77378DFD217ADF620074CFA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77378DFC217ADF620074CFA2 /* Assets.xcassets */; };
 		77378E00217ADF620074CFA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77378DFE217ADF620074CFA2 /* LaunchScreen.storyboard */; };
+		7DEAD6B4217C2F4B00E5C784 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DEAD6B3217C2F4B00E5C784 /* GoogleService-Info.plist */; };
+		B1434DBD217C968D00468BD0 /* GroupAndProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1434DBC217C968D00468BD0 /* GroupAndProfileViewController.swift */; };
+		B17920F1217BA3BC003A6588 /* NewGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17920F0217BA3BC003A6588 /* NewGroup.swift */; };
+		B17920F3217BA9D5003A6588 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17920F2217BA9D5003A6588 /* LocationViewController.swift */; };
+		B17920F5217BAE19003A6588 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17920F4217BAE19003A6588 /* LoginViewController.swift */; };
+		B17920F7217BB41C003A6588 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17920F6217BB41C003A6588 /* Group.swift */; };
+		B17920F9217BB6C1003A6588 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17920F8217BB6C1003A6588 /* Member.swift */; };
+		B1870C3E217C1F040002A3E5 /* AddNewFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1870C3D217C1F040002A3E5 /* AddNewFriendsViewController.swift */; };
+		D06732DE217BCADA00AD2792 /* SCSDKCreativeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D06732DB217BCADA00AD2792 /* SCSDKCreativeKit.framework */; };
+		D06732DF217BCADA00AD2792 /* SCSDKCreativeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D06732DB217BCADA00AD2792 /* SCSDKCreativeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D06732E0217BCADA00AD2792 /* SCSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D06732DC217BCADA00AD2792 /* SCSDKLoginKit.framework */; };
+		D06732E1217BCADA00AD2792 /* SCSDKLoginKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D06732DC217BCADA00AD2792 /* SCSDKLoginKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D06732E2217BCADA00AD2792 /* SCSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D06732DD217BCADA00AD2792 /* SCSDKCoreKit.framework */; };
+		D06732E3217BCADA00AD2792 /* SCSDKCoreKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D06732DD217BCADA00AD2792 /* SCSDKCoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DA0BDE76E9AEB61E703C672F /* Pods_JoinMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 354B3935F70255C5C8AF0B10 /* Pods_JoinMe.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D06732E4217BCADA00AD2792 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D06732E1217BCADA00AD2792 /* SCSDKLoginKit.framework in Embed Frameworks */,
+				D06732DF217BCADA00AD2792 /* SCSDKCreativeKit.framework in Embed Frameworks */,
+				D06732E3217BCADA00AD2792 /* SCSDKCoreKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		354B3935F70255C5C8AF0B10 /* Pods_JoinMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JoinMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B2E4E3A9544EB0BA354D8C4 /* Pods-JoinMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoinMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JoinMe/Pods-JoinMe.debug.xcconfig"; sourceTree = "<group>"; };
 		77378DEF217ADF610074CFA2 /* JoinMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoinMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77378DF2217ADF610074CFA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77378DF4217ADF610074CFA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +58,18 @@
 		77378DFC217ADF620074CFA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77378DFF217ADF620074CFA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77378E01217ADF620074CFA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DEAD6B3217C2F4B00E5C784 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		920B153E286A9FCCDBC0021E /* Pods-JoinMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoinMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-JoinMe/Pods-JoinMe.release.xcconfig"; sourceTree = "<group>"; };
+		B1434DBC217C968D00468BD0 /* GroupAndProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAndProfileViewController.swift; sourceTree = "<group>"; };
+		B17920F0217BA3BC003A6588 /* NewGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroup.swift; sourceTree = "<group>"; };
+		B17920F2217BA9D5003A6588 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		B17920F4217BAE19003A6588 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B17920F6217BB41C003A6588 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		B17920F8217BB6C1003A6588 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		B1870C3D217C1F040002A3E5 /* AddNewFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewFriendsViewController.swift; sourceTree = "<group>"; };
+		D06732DB217BCADA00AD2792 /* SCSDKCreativeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCSDKCreativeKit.framework; path = Pods/SnapSDK/SCSDKCreativeKit.framework; sourceTree = "<group>"; };
+		D06732DC217BCADA00AD2792 /* SCSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCSDKLoginKit.framework; path = Pods/SnapSDK/SCSDKLoginKit.framework; sourceTree = "<group>"; };
+		D06732DD217BCADA00AD2792 /* SCSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SCSDKCoreKit.framework; path = Pods/SnapSDK/SCSDKCoreKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +77,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D06732E0217BCADA00AD2792 /* SCSDKLoginKit.framework in Frameworks */,
+				DA0BDE76E9AEB61E703C672F /* Pods_JoinMe.framework in Frameworks */,
+				D06732DE217BCADA00AD2792 /* SCSDKCreativeKit.framework in Frameworks */,
+				D06732E2217BCADA00AD2792 /* SCSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6CEA43A375AC88DB94C66C6B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D06732DD217BCADA00AD2792 /* SCSDKCoreKit.framework */,
+				D06732DB217BCADA00AD2792 /* SCSDKCreativeKit.framework */,
+				D06732DC217BCADA00AD2792 /* SCSDKLoginKit.framework */,
+				354B3935F70255C5C8AF0B10 /* Pods_JoinMe.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		77378DE6217ADF610074CFA2 = {
 			isa = PBXGroup;
 			children = (
 				77378DF1217ADF610074CFA2 /* JoinMe */,
 				77378DF0217ADF610074CFA2 /* Products */,
+				F31022FBF8FEA5292BA09E3A /* Pods */,
+				6CEA43A375AC88DB94C66C6B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +120,31 @@
 			isa = PBXGroup;
 			children = (
 				77378DF2217ADF610074CFA2 /* AppDelegate.swift */,
+				B17920F4217BAE19003A6588 /* LoginViewController.swift */,
 				77378DF4217ADF610074CFA2 /* ViewController.swift */,
+				B17920F0217BA3BC003A6588 /* NewGroup.swift */,
+				B1870C3D217C1F040002A3E5 /* AddNewFriendsViewController.swift */,
+				B1434DBC217C968D00468BD0 /* GroupAndProfileViewController.swift */,
 				77378DF6217ADF610074CFA2 /* Main.storyboard */,
 				77378DFC217ADF620074CFA2 /* Assets.xcassets */,
 				77378DFE217ADF620074CFA2 /* LaunchScreen.storyboard */,
 				77378E01217ADF620074CFA2 /* Info.plist */,
+				7DEAD6B3217C2F4B00E5C784 /* GoogleService-Info.plist */,
 				77378DF9217ADF610074CFA2 /* JoinMe.xcdatamodeld */,
+				B17920F6217BB41C003A6588 /* Group.swift */,
+				B17920F8217BB6C1003A6588 /* Member.swift */,
+				B17920F2217BA9D5003A6588 /* LocationViewController.swift */,
 			);
 			path = JoinMe;
+			sourceTree = "<group>";
+		};
+		F31022FBF8FEA5292BA09E3A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B2E4E3A9544EB0BA354D8C4 /* Pods-JoinMe.debug.xcconfig */,
+				920B153E286A9FCCDBC0021E /* Pods-JoinMe.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +154,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 77378E04217ADF620074CFA2 /* Build configuration list for PBXNativeTarget "JoinMe" */;
 			buildPhases = (
+				F5FAAD21BB9202E36377BB18 /* [CP] Check Pods Manifest.lock */,
 				77378DEB217ADF610074CFA2 /* Sources */,
 				77378DEC217ADF610074CFA2 /* Frameworks */,
 				77378DED217ADF610074CFA2 /* Resources */,
+				E775F39E01BCC59B1A862CFB /* [CP] Embed Pods Frameworks */,
+				D06732E4217BCADA00AD2792 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,21 +209,111 @@
 			buildActionMask = 2147483647;
 			files = (
 				77378E00217ADF620074CFA2 /* LaunchScreen.storyboard in Resources */,
+				772F94E8217BCF8500056085 /* (null) in Resources */,
 				77378DFD217ADF620074CFA2 /* Assets.xcassets in Resources */,
 				77378DF8217ADF610074CFA2 /* Main.storyboard in Resources */,
+				7DEAD6B4217C2F4B00E5C784 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E775F39E01BCC59B1A862CFB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-JoinMe/Pods-JoinMe-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${PODS_ROOT}/SnapSDK/SCSDKBitmojiKit.framework",
+				"${PODS_ROOT}/SnapSDK/SCSDKCoreKit.framework",
+				"${PODS_ROOT}/SnapSDK/SCSDKCreativeKit.framework",
+				"${PODS_ROOT}/SnapSDK/SCSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKBitmojiKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKCreativeKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JoinMe/Pods-JoinMe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5FAAD21BB9202E36377BB18 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JoinMe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		77378DEB217ADF610074CFA2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B17920F7217BB41C003A6588 /* Group.swift in Sources */,
+				B17920F5217BAE19003A6588 /* LoginViewController.swift in Sources */,
+				B17920F3217BA9D5003A6588 /* LocationViewController.swift in Sources */,
+				B17920F1217BA3BC003A6588 /* NewGroup.swift in Sources */,
+				B1434DBD217C968D00468BD0 /* GroupAndProfileViewController.swift in Sources */,
 				77378DF5217ADF610074CFA2 /* ViewController.swift in Sources */,
 				77378DF3217ADF610074CFA2 /* AppDelegate.swift in Sources */,
+				B1870C3E217C1F040002A3E5 /* AddNewFriendsViewController.swift in Sources */,
 				77378DFB217ADF610074CFA2 /* JoinMe.xcdatamodeld in Sources */,
+				B17920F9217BB6C1003A6588 /* Member.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,10 +457,15 @@
 		};
 		77378E05217ADF620074CFA2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B2E4E3A9544EB0BA354D8C4 /* Pods-JoinMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M7Q29F7L9F;
+				DEVELOPMENT_TEAM = YNL7864VKP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/SnapSDK",
+				);
 				INFOPLIST_FILE = JoinMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,10 +480,15 @@
 		};
 		77378E06217ADF620074CFA2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 920B153E286A9FCCDBC0021E /* Pods-JoinMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M7Q29F7L9F;
+				DEVELOPMENT_TEAM = YNL7864VKP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/SnapSDK",
+				);
 				INFOPLIST_FILE = JoinMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

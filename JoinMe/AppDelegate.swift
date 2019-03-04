@@ -8,14 +8,25 @@
 
 import UIKit
 import CoreData
+import SCSDKLoginKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        if SCSDKLoginClient.application(app, open: url, options: options) {
+            return true
+        }
+        return true
+    }
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
+        let db = Firestore.firestore()
         // Override point for customization after application launch.
         return true
     }
